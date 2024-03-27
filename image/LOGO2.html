@@ -11,6 +11,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <meta name = "author" content="20210997">
         <base href = "http://127.0.0.1:5500">
+        <script type="text/javascript" src="js/Basic_js_test.js"></script>
+        <script type="text/javascript" src="js/search.js" defer></script> <!--defer는 무조건 자바스크립트를 먼저 실해시키는 명령어다-->
         <style>
             table {
                 font-size: 20pt;
@@ -21,20 +23,35 @@
     <body style="background-color: black;">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
+              <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <img src="image/LOGO.PNG" alt="Logo" width="90" height="24" class="d-inline-block align-text-top">
+                    로고
+                    Navbar
+                  </a>
+                </div>
+              </nav>
+              <a class="navbar-brand" href="https://www.leagueoflegends.com/ko-kr/">홈페이지</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#">게임정보</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">게임정보</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="#">게임정보</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">게임정보</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">영웅정보</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,6 +65,14 @@
                   </li>
                 </ul>
               </div>
+              <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                  <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" id = "search_btn" type="submit">Search</button> <!--id = "search_btn" 추가함-->
+                  </form>
+                </div>
+              </nav>
             </div>
           </nav>
 
@@ -60,21 +85,25 @@
     
     <div style="display: flex; justify-content: center;">
     <a href="index.html" target="_blank">
-        <img src="image/MAIN.jpg" width = "1200" height="768">
+        <img src="image/MAIN.jpg" class="img-fluid" width = "1200" height="768">
     </a>
     </div>
     <div style="display: flex; justify-content: center;">
         <table bolder = "1">
+          
             <caption>인기 캐릭터</caption>
             <tbody>
+              <table class="table table-dark table-striped">
                 <tr bgcolor="red">
-                    <td width = "80" rowspan="2">사이온</td>
-                    <td>아리</td>
-                    <td>가렌</td>
-                    <td>가렌2</td>
-                    <td>가렌3</td>
+                    <td width = "100" rowspan="2">#</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
                 </tr>
                 <tr bgcolor = "grey">
+                    <td>사이온</td>
                     <td>아리</td>
                     <td>가렌</td>
                     <td>가렌2</td>
@@ -82,14 +111,17 @@
                 </tr>
                 <td colspan="5"> <!--5로 병합을 시킴. colspan은 가로 rowspan은 새로이다-->
                     <a href="https://www.leagueoflegends.com/ko-kr/">롤 웹사이트 접속하기</a>
+
                 </td>
                 
                 <tr>
-                    <td bgcolor = "blue"><b>카직스</b></td>
+                    <td bgcolor = "blue"><b>2</b></td>
+                    <td>카직스</td>
                     <td>루시안</td>
                     <td>루시안2</td>
-                    <td colspan="2"><font size = "13"> <img src="character.jpg" width = "100" height="50">바이1, 2</font></td>
+                    <td colspan="2"><font size = "13"> <img src="image/character.jpg" width = "100" height="50">바이, 바이2</font></td>
                 </tr>
+              </table>
             </tbody>
         </table>
     </div>

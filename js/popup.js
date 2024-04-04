@@ -23,3 +23,11 @@ function show_clock() {
     }
     setTimeout(show_clock, 1000);
 }
+
+function over(obj) {
+    obj.src="image/LOGO2.png";
+}
+
+function out(obj) {
+    obj.src="image/LOGO2.png";
+}

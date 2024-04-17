@@ -1,0 +1,82 @@
+<!--로그인 화면 위와 메인화면 윗 부분과 똑같아 보이게끔 다 복붙한다.-->
+
+<!DOCTYPE html>
+<html lang = "ko">
+<!--주석문-->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"><!--항상 모든 페이지에 명시되어야함(부트스트랩)-->
+        <title>LOL 메인화면</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"><!--integrity 무결성, link눈 주로 Head안에서 사용-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <meta name = "author" content="20210997">
+        <base href = "http://127.0.0.1:5500">
+        <script type="text/javascript" src="js/Basic_js_test.js"></script>
+        <script type="text/javascript" src="js/search.js" defer></script> <!--defer는 무조건 자바스크립트를 먼저 실해시키는 명령어다-->
+        <script type="text/javascript" src="js/data_type.js" defer></script>
+        <link rel="stylesheet" href="../css/login.css">
+        <style>
+            table {
+                font-size: 20pt;
+                color: white;
+            }
+        </style>
+    </head>
+    <body style="background-color: black;" onload="pop_up();">
+        <section class="vh-100 gradient-custom">
+            <div class="container py-5 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                  <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+          
+                      <div class="mb-md-5 mt-md-4 pb-5">
+                        <form method="get" action="/login/index_login.html">
+          
+                        <h2 class="fw-bold mb-2 text-uppercase">로그인 화면</h2>
+                        <p class="text-white-50 mb-5">로그인용 이메일과 패스워드를 입력!</p>
+          
+                        <div data-mdb-input-init class="form-outline form-white mb-4">
+                          <input type="email" id="typeEmailX" class="form-control form-control-lg" name="id" />
+                          <label class="form-label" for="typeEmailX">계정이름</label>
+                        </div>
+          
+                        <div data-mdb-input-init class="form-outline form-white mb-4">
+                          <input type="password" id="typePasswordX" class="form-control form-control-lg" name="password" />
+                          <label class="form-label" for="typePasswordX">비밀번호</label>
+                        </div>
+          
+                        <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">로그인이 안되시나요?</a></p>
+          
+                        <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+          
+                        <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                          <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                          <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                          <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+                        </div>
+          
+                      </div>
+          
+                      <div>
+                        <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
+                        </p>
+                      </div>
+                    </form>
+          
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+        <div style = "display: flex; justify-content: center;">
+            <h3 style = "font-size: 24px; font-weight: bold; font-style: italic; color: white; font-family: '굴림';"> 라이엇 게임 회사 정보 2024년 x월 작성됨</h3>
+        </div>
+        
+    </body>
+        
+</html>

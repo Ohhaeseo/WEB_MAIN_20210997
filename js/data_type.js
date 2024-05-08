@@ -1,4 +1,4 @@
-let number = 5;
+let number = 5; //블록 스코프를 가짐
 let str = '문자열 입력'; //""e도 가능
 let prime = 1.5123;
 let is_ok = true; //참

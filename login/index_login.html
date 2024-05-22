@@ -15,6 +15,9 @@
         <script type="text/javascript" src="js/search.js" defer></script> <!--defer는 무조건 자바스크립트를 먼저 실해시키는 명령어다-->
         <script type="text/javascript" src="js/data_type.js" defer></script>
         <script type="text/javascript" src="js/popup.js"defer></script>
+        <script type="text/javascript" src="../js/logout.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js" integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
         <style>
             table {
                 font-size: 20pt;
@@ -22,7 +25,9 @@
             }
         </style>
     </head>
+    
     <body style="background-color: black;" onload="pop_up();">
+      <body style="background-color: black;" onload="init_logined();"></body>
         <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
             <div class="container-fluid">
               <nav class="navbar bg-body-tertiary">
@@ -72,7 +77,7 @@
                   <form class="d-flex" role="search" onsubmit="return googleSearch();">
                     <input class="form-control me-2" id="search_input" name="q" type="search" placeholder="키워드 입력" aria-label="Search">
                     <button class="btn btn-outline-success" id = "search_btn" type="submit">검색하기</button> <!--id = "search_btn" 추가함-->
-                    <a href="LOGO2.html" class="btn btn-outline-success" id="login_btn">로그아웃하기</a>
+                    <a href="LOGO2.html" class="btn btn-outline-success" id="logout_btn">로그아웃하기</a>
                   </form>
 
                 </div>

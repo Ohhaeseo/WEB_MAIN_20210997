@@ -17,6 +17,7 @@ function join(){ // 회원가입
    else
    {
       session_join_set(); // 회원가입 용 세션 생성
+      session_join_get()
       form.submit();
    }
 }
@@ -61,4 +62,6 @@ class SignUp
         
     }
   }
+
+  
   

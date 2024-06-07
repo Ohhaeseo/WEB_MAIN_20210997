@@ -23,7 +23,7 @@
             }
         </style>
     </head>
-    <body>
+    <body onload="session_join_get()">
       <form method="get" action="/login/index_join.html" id="form_main"></form>
       <section class="vh-100 gradient-custom">
         <div class="container py-5 h-100">
@@ -121,8 +121,9 @@
                     </div>
       
                     <div class="mt-4 pt-2">
-                      <input class="btn btn-primary btn-lg" onclick="session_join_set()" type="button" id="join_btn" value="회원 가입" />
-                      
+                      <!--<input class="btn btn-primary btn-lg" onclick="session_join_set()" type="button" id="join_btn" value="회원 가입" />-->
+                      <input class="btn btn-primary btn-lg" onclick="join()" type="button" id="join_btn" value="회원 가입" />
+
                     </div>
       
                   </form>

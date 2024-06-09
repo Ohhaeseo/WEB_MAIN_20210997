@@ -1,4 +1,5 @@
-function session_join_set(){ //세션 저장(객체)    
+function session_join_set()
+{ //세션 저장(객체)    
      let f_name = document.querySelector("#firstName").value;
      let l_name = document.querySelector("#lastName").value;
      let b_day = document.querySelector("#birthdayDate").value;
@@ -13,7 +14,7 @@ function session_join_set(){ //세션 저장(객체)    
      console.log(newSignUp.contactInfo); // johndoe@email.com 123-456-7890
      
      if (sessionStorage) 
-     {
+      {
         const objString = JSON.stringify(newSignUp); // 객체 -> JSON 문자열 변환
         let en_text = encrypt_text(objString); // 암호화
         sessionStorage.setItem("Session_Storage_new_user", objString);
@@ -25,7 +26,8 @@ function session_join_set(){ //세션 저장(객체)    
       }  
 }
 
-function session_join_get() {
+function session_join_get() 
+{
       if (sessionStorage) 
       {
          const objString = sessionStorage.getItem("Session_Storage_new_user");
@@ -44,7 +46,7 @@ function session_join_get() {
          {
             console.log("세션 스토리지 지원 x");
          }
- }
+}
 
          /*function session_set()
          {//세션 저장(객체)    
@@ -89,7 +91,7 @@ function session_join_get() {
          function session_check() 
          { //세션 검사
 
-         if (sessionStorage.getItem("Session_Storage_object"))
+         if (sessionStorage.getItem("Session_Storage_new_user"))
          {
             alert("이미 로그인 되었습니다.");
             location.href='../login/index_login.html'; // 로그인된 페이지로 이동

@@ -1,4 +1,4 @@
-function join(){ // 회원가입
+/*function join(){ // 회원가입
    let form = document.querySelector("#form_main");
    let f_name = document.querySelector("#firstName");
    let l_name = document.querySelector("#lastName");
@@ -20,6 +20,48 @@ function join(){ // 회원가입
       session_join_get()
       form.submit();
    }
+}*/
+
+function join()
+{ // 회원가입
+  let form = document.querySelector("#form_main");
+  let f_name = document.querySelector("#firstName");
+  let l_name = document.querySelector("#lastName");
+  let b_day = document.querySelector("#birthdayDate");
+  let gender = document.querySelector("#inlineRadioOptions");
+  let email = document.querySelector("#emailAddress");
+  let p_number = document.querySelector("#phoneNumber");
+  let class_check = document.querySelector(".select form-control-lg");
+  
+  form.action = "../login/index_join.html";
+  form.method = "get";
+
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  
+  if (
+    f_name.value.length === 0 ||
+    l_name.value.length === 0 ||
+    b_day.value.length === 0 ||
+    email.value.length === 0 ||
+    p_number.value.length === 0
+  ) 
+  {
+    alert("회원가입 폼에 필수 정보를 입력해주세요.(성별, 분반 제외)");
+  } 
+  else if (f_name.value.length > 2 || l_name.value.length > 2) 
+  {
+    alert("성은 두 글자로 제한됩니다.");
+  } 
+  else if (!emailPattern.test(email.value)) 
+  {
+    alert("올바른 이메일 주소를 입력해주세요.");
+  } 
+  else 
+  {
+    session_join_set(); // 회원가입 용 세션 생성
+    session_join_get();
+    form.submit();
+  }
 }
 
 

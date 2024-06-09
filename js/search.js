@@ -17,7 +17,8 @@ function googleSearch() {
 
 document.getElementById("search_btn").addEventListener('click', googleSearch);
 
-function googleSearch() {
+function googleSearch() 
+{
     const searchTerm = document.getElementById("search_input").value.trim(); // 공백 제거
     if (searchTerm.length === 0) {
         alert("검색어를 입력해주세요."); // 검색어가 비어있는 경우 알림

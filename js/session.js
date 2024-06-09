@@ -1,51 +1,62 @@
 function session_join_set()
-{ //세션 저장(객체)    
-     let f_name = document.querySelector("#firstName").value;
-     let l_name = document.querySelector("#lastName").value;
-     let b_day = document.querySelector("#birthdayDate").value;
-     let gender = document.querySelector("#inlineRadioOptions");
-     let email = document.querySelector("#emailAddress").value;
-     let p_number = document.querySelector("#phoneNumber").value;
-     let class_check = document.querySelector(".select form-control-lg");
-     let random = new Date(); // 랜덤 타임스탬프
-     
-     const newSignUp = new SignUp(f_name, l_name, b_day, gender, email, p_number, class_check, random);
-     console.log(newSignUp.fullName); // John Doe
-     console.log(newSignUp.contactInfo); // johndoe@email.com 123-456-7890
-     
-     if (sessionStorage) 
-      {
-        const objString = JSON.stringify(newSignUp); // 객체 -> JSON 문자열 변환
-        let en_text = encrypt_text(objString); // 암호화
+{ // 세션 저장(객체)
+    let f_name = document.querySelector("#firstName").value; // "firstName" 입력 필드의 값을 가져옴
+    let l_name = document.querySelector("#lastName").value; // "lastName" 입력 필드의 값을 가져옴
+    let b_day = document.querySelector("#birthdayDate").value; // "birthdayDate" 입력 필드의 값을 가져옴
+    let gender = document.querySelector("#inlineRadioOptions"); // "inlineRadioOptions" 라디오 버튼을 가져옴
+    let email = document.querySelector("#emailAddress").value; // "emailAddress" 입력 필드의 값을 가져옴
+    let p_number = document.querySelector("#phoneNumber").value; // "phoneNumber" 입력 필드의 값을 가져옴
+    let class_check = document.querySelector(".select form-control-lg"); // "class_check" 필드를 가져옴
+    let random = new Date(); // 랜덤 타임스탬프 생성 (현재 시간을 사용)
+
+    // `SignUp` 객체 생성
+    const newSignUp = new SignUp(f_name, l_name, b_day, gender, email, p_number, class_check, random);
+    console.log(newSignUp.fullName); // John Doe
+    console.log(newSignUp.contactInfo); // johndoe@email.com 123-456-7890
+
+    // 세션 스토리지 지원 여부 확인
+    if (sessionStorage) 
+    {
+        // 객체를 JSON 문자열로 변환
+        const objString = JSON.stringify(newSignUp); 
+        // 객체를 암호화
+        let en_text = encrypt_text(objString);
+        // 세션 스토리지에 원본과 암호화된 데이터를 저장
         sessionStorage.setItem("Session_Storage_new_user", objString);
         sessionStorage.setItem("Session_Storage_new_user_encryted", en_text);
-      } 
-      else 
-      {
+    } 
+    else 
+    {
+        // 세션 스토리지 지원 안 함
         alert("세션 스토리지 지원 x");
-      }  
+    }  
 }
 
 function session_join_get() 
 {
-      if (sessionStorage) 
-      {
-         const objString = sessionStorage.getItem("Session_Storage_new_user");
-         if (objString) 
-         {
-            const newSignUp = JSON.parse(objString); // JSON 문자열 -> 객체 변환
+    // 세션 스토리지 지원 여부 확인
+    if (sessionStorage) 
+    {
+        // 세션 스토리지에서 저장된 원본 객체를 가져옴
+        const objString = sessionStorage.getItem("Session_Storage_new_user");
+        if (objString) 
+        {
+            // 문자열을 다시 객체로 변환
+            const newSignUp = JSON.parse(objString);
             console.log("복호화된 객체 내용:");
             console.log(newSignUp);
-         } 
-         else 
-         {
+        } 
+        else 
+        {
+            // 세션에 저장된 객체가 없을 때
             console.log("세션에 저장된 객체가 없습니다.");
-         }
-         } 
-         else 
-         {
-            console.log("세션 스토리지 지원 x");
-         }
+        }
+    } 
+    else 
+    {
+        // 세션 스토리지 지원 안 함
+        console.log("세션 스토리지 지원 x");
+    }
 }
 
          /*function session_set()

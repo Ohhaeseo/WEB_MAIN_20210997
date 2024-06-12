@@ -40,6 +40,7 @@ This project is a starting point for a Web application.
              --> 응용 문제 풀기 : 개인 프로필용 사진 적용 완료!
 
 ###그 외 추가 구현 기능###
+
 **회원가입 시 성이 두 글자 이상이면 메세지가 뜨고, 회원가입 진행이 안됨. (join.js)
 
 **회원가입 시 이메일 형식이 아니면 메세지가 뜨고 회원가입 진행이 안됨. (join.js)

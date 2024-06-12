@@ -41,5 +41,6 @@ This project is a starting point for a Web application.
 
 ###그 외 추가 구현 기능###
 **회원가입 시 성이 두 글자 이상이면 메세지가 뜨고, 회원가입 진행이 안됨. (join.js)
+
 **회원가입 시 이메일 형식이 아니면 메세지가 뜨고 회원가입 진행이 안됨. (join.js)
 

@@ -68,7 +68,8 @@ function getCookie(name) {
 
 function closePopup() {
     // 팝업 체크박스가 선택된 경우
-    if (document.getElementById('check_popup').checked) {
+    if (document.getElementById('check_popup').checked) 
+    {
         setCookie("popupYN", "N", 1); // "popupYN" 쿠키를 "N"으로 설정해 1일 동안 유지
         console.log("쿠키를 설정합니다."); // 디버깅을 위해 콘솔에 메시지 출력
         self.close(); // 현재 창을 닫음

@@ -118,19 +118,38 @@
     
         // 로그인 폼에 쿠키에서 가져온 아이디 입력
         function init()
-        { 
-            const emailInput = document.getElementById('typeEmailX');
-            const idsave_check = document.getElementById('idSaveCheck');
-            let get_id = getCookie("id");
+{ 
+        // 'typeEmailX'라는 id를 가진 요소를 찾아 emailInput 변수에 할당합니다.
+        // 이 요소는 이메일 입력 필드를 나타냅니다.
+        const emailInput = document.getElementById('typeEmailX');
+    
+        // 'idSaveCheck'라는 id를 가진 요소를 찾아 idsave_check 변수에 할당합니다.
+        // 이 요소는 아이디 저장 여부를 나타내는 체크박스입니다.
+        const idsave_check = document.getElementById('idSaveCheck');
+    
+        // getCookie() 함수를 호출하여 "id"라는 이름의 쿠키 값을 가져와 get_id 변수에 할당합니다.
+        // 이 쿠키는 이전에 저장된 아이디 값을 나타냅니다.
+        let get_id = getCookie("id");
 
-            if(get_id) 
-            {
-                emailInput.value = get_id;
-                idsave_check.checked = true;
-                session_check();
-            }
-                
+        // get_id 변수에 값이 존재하는지 확인합니다.
+        if(get_id) 
+        {
+        // 만약 get_id 변수에 값이 존재한다면, 다음 작업을 수행합니다:
+        
+        // emailInput 요소의 값을 get_id로 설정합니다.
+        // 즉, 이전에 저장된 아이디 값을 이메일 입력 필드에 자동으로 채워 넣습니다.
+        emailInput.value = get_id;
+        
+        // idsave_check 요소의 checked 속성을 true로 설정합니다.
+        // 즉, 아이디 저장 체크박스를 선택된 상태로 만듭니다.
+        idsave_check.checked = true;
+        
+        // session_check() 함수를 호출합니다.
+        // 이 함수는 세션 관련 작업을 수행하는 함수로 추정됩니다.
+        session_check();
         }
+        
+}
 
         // 로그인 횟수 증가 함수
         function login_count() 

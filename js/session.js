@@ -17,11 +17,11 @@ function session_join_set()
     // 세션 스토리지 지원 여부 확인
     if (sessionStorage) 
     {
-        // 객체를 JSON 문자열로 변환
+        // 객체를 JSON 문자열로 변환b
         const objString = JSON.stringify(newSignUp); 
         // 객체를 암호화
         let en_text = encrypt_text(objString);
-        // 세션 스토리지에 원본과 암호화된 데이터를 저장
+        // 세션 스토리지에 원본과  암호화된 데이터를 저장
         sessionStorage.setItem("Session_Storage_new_user", objString);
         sessionStorage.setItem("Session_Storage_new_user_encryted", en_text);
     } 

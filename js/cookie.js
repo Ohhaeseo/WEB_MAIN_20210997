@@ -1,6 +1,6 @@
 function setCookie(name, value, expiredays) {
-    // 새로운 날짜 객체를 생성합니다.
-    var date = new Date();
+    
+    var date = new Date(); // 새로운 날짜 객체를 생성합니다.
     
     // 만료 날짜를 현재 날짜에 'expiredays'만큼 더한 값으로 설정합니다.
     date.setDate(date.getDate() + expiredays);
